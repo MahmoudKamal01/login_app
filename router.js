@@ -9,8 +9,8 @@ const credential = JSON.parse(
 
 router.post('/login', (req, res) => {
   if (
-    req.body.email == credential.email &&
-    req.body.password == credential.password
+    req.body.email == credential[0].email &&
+    req.body.password == credential[0].password
   ) {
     req.session.user = req.body.email;
     res.redirect('/route/dashboard');
